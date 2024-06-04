@@ -7,10 +7,14 @@ body {
 }
 
 header {
-    background-color: #264653; /* updated primary color */
+    background-color: #264653;
     color: #ffffff;
     padding: 20px 0;
     text-align: center;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 nav ul li a {
@@ -35,4 +39,53 @@ footer {
     text-align: center;
     padding: 10px 0;
     margin-top: 20px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 3fr; /* Sidebar takes 1 part, main content takes 3 parts */
+    grid-template-rows: auto 1fr auto; /* Header, content, and footer */
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+    gap: 20px; /* Space between grid items */
+    padding: 20px; /* Padding around the grid */
+}
+
+header {
+    grid-area: header;
+}
+
+.sidebar {
+    grid-area: sidebar;
+}
+
+.main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: footer;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6; /* Improves readability */
+    color: #222222;
+    background-color: #FAFAFA;
+}
+
+.container {
+    max-width: 1200px; /* Max width of the grid container */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Padding around the container */
+}
+
+header, .sidebar, .main, footer {
+    padding: 20px; /* Padding inside each grid area */
+    background-color: #ffffff; /* White backgrounds to enhance whitespace */
+    border: 1px solid #ddd; /* Subtle borders to define areas */
 }
