@@ -1,91 +1,122 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
+    color: #333; /* Darker text color for better readability */
+    background-color: #f9f9f9; /* Light background for a clean look */
     margin: 0;
     padding: 0;
-    color: #222222; /* updated text color */
-    background-color: #FAFAFA; /* updated background color */
+    line-height: 1.6;
 }
 
 header {
-    background-color: #264653;
+    background-color: #1E90FF; /* Bright blue for the header */
     color: #ffffff;
     padding: 20px 0;
     text-align: center;
-    position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for a sleek effect */
+}
+
+header ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li {
+    margin-right: 20px;
+}
+
+header ul li:last-child {
+    margin-right: 0;
 }
 
 nav ul li a {
     color: #ffffff;
     text-decoration: none;
+    font-weight: bold;
     transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #F4A261; /* updated secondary color */
+    color: #00BFFF; /* Bright blue for hover effect */
+}
+section {
+    padding: 60px 20px; /* Increased padding for more white space */
+    text-align: center;
+    background-color: #ffffff; /* White background for sections */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for sections */
+    margin: 20px auto;
+    max-width: 800px;
 }
 
-section {
+section img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px; /* Add space between image and text */
+    border-radius: 10px; /* Rounded corners for images */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for images */
+}
+
+.section-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.section-content:nth-child(odd) {
+    flex-direction: row;
+}
+
+.section-content:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.section-content img {
+    width: 50%;
+    margin: 0 20px;
+}
+
+.section-content div {
+    width: 50%;
     padding: 20px;
-    text-align: center;
-    background-color: #F0F0F0; /* updated neutral background */
+}
+
+@media (max-width: 768px) {
+    .section-content {
+        flex-direction: column;
+    }
+
+    .section-content:nth-child(even) {
+        flex-direction: column;
+    }
+
+    .section-content img,
+    .section-content div {
+        width: 100%;
+        margin: 10px 0;
+        padding: 10px;
+    }
+
+    header ul {
+        flex-direction: column;
+    }
+
+    section {
+        padding: 20px;
+    }
 }
 
 footer {
-    background-color: #264653; /* consistent with header */
+    background-color: #1E90FF;
     color: #ffffff;
     text-align: center;
-    padding: 10px 0;
-    margin-top: 20px;
-}
-
-.container {
-    display: grid;
-    grid-template-columns: 1fr 3fr; /* Sidebar takes 1 part, main content takes 3 parts */
-    grid-template-rows: auto 1fr auto; /* Header, content, and footer */
-    grid-template-areas:
-        "header header"
-        "sidebar main"
-        "footer footer";
-    gap: 20px; /* Space between grid items */
-    padding: 20px; /* Padding around the grid */
-}
-
-header {
-    grid-area: header;
-}
-
-.sidebar {
-    grid-area: sidebar;
-}
-
-.main {
-    grid-area: main;
-}
-
-footer {
-    grid-area: footer;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    line-height: 1.6; /* Improves readability */
-    color: #222222;
-    background-color: #FAFAFA;
-}
-
-.container {
-    max-width: 1200px; /* Max width of the grid container */
-    margin: 0 auto; /* Center the container */
-    padding: 20px; /* Padding around the container */
-}
-
-header, .sidebar, .main, footer {
-    padding: 20px; /* Padding inside each grid area */
-    background-color: #ffffff; /* White backgrounds to enhance whitespace */
-    border: 1px solid #ddd; /* Subtle borders to define areas */
+    padding: 20px 0;
+    margin-top: 40px;
 }
